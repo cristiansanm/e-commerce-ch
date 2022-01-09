@@ -1,0 +1,60 @@
+.header__container{
+    max-width: 1320px;
+    margin: 0 auto;
+}
+/*#c2beb9*/
+.phone__contact{
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 18px;
+    height: 24px;
+    h4{
+        margin: 0;
+    }
+    span{
+        margin-left: 5px;
+        margin-top: 2px
+    }
+}
+.links__header{
+    padding-top: 18px;
+    a, a:link {
+        text-decoration: none;
+        color: #94928f;
+        font-weight: 500;
+    }
+    a:hover{
+        color: rgb(33, 89, 192);
+    }
+}
+.money__type{
+    width: 25%;
+    border-right: 1px solid #0943AEFF;
+    border-left: 1px solid #0943AEFF;
+    margin-right: 16px;
+}
+.my__account{
+    padding-top: 10px;
+}
+hr{
+    width: 100vw;
+    border: 0.1rem solid #0943AEFF;
+    background-color: #0943AEFF;
+}
+.quick__buttons{
+    display: flex;
+    div{
+        cursor:pointer;
+        height: 40px;
+        display: flex;
+        flex-direction: column;
+        span{
+            font-weight: bold;
+        }
+        span:last-child{
+            font-size: 13px;
+            margin-top: 6px;
+            font-weight: 300;
+        }
+    }
+}

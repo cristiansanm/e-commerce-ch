@@ -1,0 +1,15 @@
+
+.bg__navbar{
+    background: linear-gradient(to bottom, #0943AEFF, #374e81);
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-family: 'Comfortaa', cursive;
+    margin-top: 15px;
+}
+.nav__button{
+    padding: 0 15px !important;
+}
+.button__hover:hover{
+    background-color: #1976d2 !important;
+}

@@ -1,0 +1,50 @@
+//ternario -> codicion ? . : . ; condicion && accion ; condicion || accion 
+  // const condition = true;
+  // console.log(`The result is ${condition ? true : false}`);
+
+  //IMPORTANT!!!!!!
+
+  //SPREED OPERATORS
+  //copia los elementos que estén dentro de un array o un objeto (los despliega)
+  // let a = 'a';
+  // const array = ['b', 'c', 'd'];
+  // const newArray = [a, ...array];
+  // console.log('Nuevo Array ', newArray);
+
+  //DYNAMIC PROPERTIES
+  //Sirve para construir propiedades en cada elemento de forma dinámica, llamando a la variable
+  // const lastName="SANZ"
+  // const obj = {
+  //   name: 'CRISTIAN',
+  //   age: 23,
+  //   ['id_'+lastName]: 'MEGO'
+  // };
+  // console.log(obj)
+
+  
+  
+  //DESTRUSTURING
+  // const obj = {
+  //   name : 'CRISTIAN',
+  //   lastName: 'MEGO',
+  // }
+  //const {name = name, lastName = lastName} = obj;
+  //console.log("name ",name)
+
+  //DEEP MATCHING
+  // const obj = {
+  //   name : 'CRISTIAN',
+  //   lastName: 'MEGO',
+  // }
+  // const {name: firstName} = obj;
+  // console.log("nameFirst: ",firstName)
+
+  //ASSIGNMENT ON DESTRUSTURING
+  //Si no hay un valor declarado, le asigna uno a una propiedad, sino, coge el por defecto
+  // const obj = {
+  //   name : 'CRISTIAN',
+  //   lastName: 'MEGO',
+  //   edad: 43
+  // }
+  // const {name: primaryName, edad=35} = obj;
+  // console.log(edad)
