@@ -1,8 +1,8 @@
 import React from 'react';
 import "./../../assets/css/HomeStyles/Header.scss"
-import FirstCompContact from './Headers/FirstCompContact';
-import SecondCompHeader from './Headers/SecondCompHeader';
-function Header() {
+import FirstCompContact from './HeadersComp/FirstCompContact';
+import SecondCompHeader from './HeadersComp/SecondCompHeader';
+function HeaderContainer() {
     return (
         <div>
             <FirstCompContact/>
@@ -12,4 +12,4 @@ function Header() {
     )
 }
 
-export default Header
+export default HeaderContainer

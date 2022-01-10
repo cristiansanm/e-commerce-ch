@@ -2,6 +2,13 @@
     max-width: 1320px;
     margin: 0 auto;
 }
+@media only screen and (max-width: 1320px) {
+    .header__container{
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 0 20px
+    }
+}
 /*#c2beb9*/
 .phone__contact{
     display: flex;

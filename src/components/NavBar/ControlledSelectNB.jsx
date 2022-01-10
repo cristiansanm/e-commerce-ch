@@ -20,7 +20,8 @@ export default function ControlledSelectNB({header, listCategory, formatLink}) {
       sx={
           { 
               width: "10%", 
-              maxWidth: 360, 
+              maxWidth: 360,
+              minWidth: 200, 
               background: 'linear-gradient(to bottom, #0943AEFF, #374e81);',
               '& a': { 
                   textDecoration: 'none',

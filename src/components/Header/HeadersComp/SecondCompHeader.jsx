@@ -2,8 +2,8 @@ import React from 'react';
 import { Grid } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import logo from "./../../../assets/img/logo_edited.png"
-import "./../../../assets/css/HomeStyles/Header.scss"
-import TextInput from '../../UICommonComp/TextInput';
+import './../../../assets/css/HomeStyles/Header.scss'
+import TextInput from './../../UICommonComp/TextInput';
 import QuickActions from './QuickActions';
 const useStyles = makeStyles({
     gridContainer:{
