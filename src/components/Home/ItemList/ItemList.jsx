@@ -1,3 +1,4 @@
+import { Grid } from '@mui/material';
 import React, { useState, useEffect } from 'react'
 import {invokeData} from '../../../assets/js/mockupData'
 import Item from './Item';
@@ -18,9 +19,8 @@ function ItemList() {
         load();
     }, [])
     return (
-        <div>
-            <Item/>
-            {console.log(dataLoaded)}
+        <div>  
+            <Item data={dataLoaded[3]}/>
         </div>
     )
 }
