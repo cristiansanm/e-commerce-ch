@@ -1,4 +1,5 @@
 import React from 'react'
+import SkeletonLoader from '../../UICommonComp/SkeletonLoader';
 import ItemCount from './ItemCount'
 
 function Item({data}) {
@@ -7,7 +8,14 @@ function Item({data}) {
     }
     return (
         <div>
-            <ItemCount stock={data?.stock} onAdd={onAdd}/>
+            {
+                data ? (
+                    <ItemCount stock={data?.stock} onAdd={onAdd}/>
+                ):(
+                    <SkeletonLoader/>
+                )
+            }
+            
         </div>
     )
 }
