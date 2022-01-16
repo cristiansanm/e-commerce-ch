@@ -1,5 +1,6 @@
 import React from 'react'
 import NavBar from '../NavBar/NavBar'
+import HeaderViews from '../UICommonComp/HeaderViews'
 import HeaderContainer from './../Header/HeaderContainer'
 import ItemListContainer from './ItemList/ItemListContainer'
 
@@ -8,7 +9,8 @@ function ContainerHome() {
         <div>
             <HeaderContainer/>
             <NavBar/>
-            <ItemListContainer greeting="Bienvienidos a mi tienda"/>
+            <HeaderViews viewTittle="Principales Ofertas"/>
+            <ItemListContainer/>
         </div>
     )
 }
