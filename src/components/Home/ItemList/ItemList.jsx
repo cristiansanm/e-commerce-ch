@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import {invokeData} from '../../../assets/js/mockupData'
 import SkeletonLoader from '../../UICommonComp/SkeletonLoader';
 import Item from './Item';
-
+import './../../../assets/css/Item.scss'
 function ItemList() {
     const [dataLoaded, setDataLoaded] = useState([]);
     const load = async () => {
@@ -19,13 +19,13 @@ function ItemList() {
         load();
     }, [])
     return (
-        <div style={{display: 'flex', flexWrap: 'wrap', width: '100%', justifyContent: 'center', padding:'3rem 0'}}>
+        <div className="item__list__container">
             {dataLoaded.length ? (dataLoaded?.map((el, key) => 
                 <div key={key}>
                     <Item data={el}/>
                 </div>
             )):(
-                <div style={{width: '100%', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', padding: '3rem'}}>
+                <div className="skeletons__container">
                     <SkeletonLoader/>
                     <SkeletonLoader/>
                     <SkeletonLoader/>

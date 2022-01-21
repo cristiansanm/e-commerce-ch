@@ -16,3 +16,17 @@
         font-weight: bolder;
     }
 }
+.item__list__container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    padding: 3rem 0;
+}
+.skeletons__container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 3rem;
+}
