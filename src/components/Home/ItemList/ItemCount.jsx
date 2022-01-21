@@ -29,11 +29,10 @@ function ItemCount({ stock, initial, onAdd}) {
                     <AddIcon color={count<stock ? 'primary' : '' }/>
                 </IconButton>
             </div>
-            <div>{stock>0 && <h4>Stock: {stock}</h4>}</div>
             <div>
                 <Button 
                     disabled = {(stock<=0 ? true : false)} 
-                    onClick={onAdd(count)} 
+                    onClick={()=> onAdd(count)} 
                     variant="contained"
                 >
                     {stock>0 ? 'Añadir al carrito' : 'Fuera de Stock'}

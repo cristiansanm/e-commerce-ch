@@ -44,7 +44,7 @@ export default function ControlledSelectNB({header, listCategory, formatLink}) {
       </ListItemButton>
       <Collapse in={open} timeout="auto" unmountOnExit>
         {(listCategory).map((element, key) => 
-            <a href={formatLink[element]}>
+            <a key={key} href={formatLink[element]}>
                 <List component="div" disablePadding>
                     <ListItemButton key={key} className="button__hover" sx={{ pl: 4, }}>
                         <ListItemIcon>

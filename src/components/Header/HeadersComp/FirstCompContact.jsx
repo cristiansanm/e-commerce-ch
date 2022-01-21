@@ -39,7 +39,7 @@ function FirstCompContact() {
     const classes = useStyles();
     return (
         <div className="header__container">
-            <Grid py={2} container xs={12}>
+            <Grid py={2} container>
                 <Grid item lg={3} md={12} sm={12} xs={12}>
                     <div className={classes.phoneContact}>
                         <PhoneIcon sx={{height: "100%", fontSize: "2rem"}}/>
@@ -49,9 +49,9 @@ function FirstCompContact() {
                 </Grid>
                 <Grid className={classes.secondPart} item lg={9} md={12} sm={12} xs={12}>
                     <div className="links__header">
-                        <Box component="a"><a href="#">Acerca de nosotros</a></Box>
-                        <Box component="a" mx={2}><a href="#">Blog</a></Box>
-                        <Box component="a" mr={2}><a href="#">Cómo comprar</a></Box>
+                        <Box component="span"><a href="#">Acerca de nosotros</a></Box>
+                        <Box component="span" mx={2}><a href="#">Blog</a></Box>
+                        <Box component="span" mr={2}><a href="#">Cómo comprar</a></Box>
                     </div>
                     <div className="money__type">
                         <ControlledSelect/>

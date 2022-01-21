@@ -1,6 +1,6 @@
-import { Grid } from '@mui/material';
 import React, { useState, useEffect } from 'react'
 import {invokeData} from '../../../assets/js/mockupData'
+import SkeletonLoader from '../../UICommonComp/SkeletonLoader';
 import Item from './Item';
 
 function ItemList() {
@@ -19,8 +19,21 @@ function ItemList() {
         load();
     }, [])
     return (
-        <div>  
-            <Item data={dataLoaded[3]}/>
+        <div style={{display: 'flex', flexWrap: 'wrap', width: '100%', justifyContent: 'center', padding:'3rem 0'}}>
+            {dataLoaded.length ? (dataLoaded?.map((el, key) => 
+                <div key={key}>
+                    <Item data={el}/>
+                </div>
+            )):(
+                <div style={{width: '100%', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', padding: '3rem'}}>
+                    <SkeletonLoader/>
+                    <SkeletonLoader/>
+                    <SkeletonLoader/>
+                    <SkeletonLoader/>
+                    <SkeletonLoader/>
+                </div>
+                
+            )}
         </div>
     )
 }

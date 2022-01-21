@@ -21,7 +21,7 @@ function SecondCompHeader() {
     const classes = useStyles();
     return (
         <div className="header__container">
-            <Grid mt={2} className={classes.gridContainer} container xs={12}>
+            <Grid mt={2} className={classes.gridContainer} container>
                 <Grid className={classes.logoGrid} item xs={5} sm={3}>
                     <a href="/home">
                         <img 
