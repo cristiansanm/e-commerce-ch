@@ -64,4 +64,11 @@ hr{
             font-weight: 300;
         }
     }
+    .button__container__options{
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        color: #212529;
+        
+    }
 }

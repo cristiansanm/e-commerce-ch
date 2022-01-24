@@ -5,6 +5,7 @@ import DeliveryDiningIcon from '@mui/icons-material/DeliveryDining';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import  "./../../../assets/css/HomeStyles/Header.scss";
 import { makeStyles } from '@mui/styles';
+import { Link } from 'react-router-dom';
 const useStyles = makeStyles({
     quickButtonsContainer:{
         display: "flex",
@@ -47,8 +48,10 @@ function QuickActions({itemWishList=10, itemOrders=14, itemCart=10}) {
                         />
                     </div>
                     <div>
-                        <span>Cart</span>
-                        <span>{itemCart}</span>
+                        <Link className="button__container__options" to="/cart">
+                            <span>Cart</span>
+                            <span>{itemCart}</span>
+                        </Link>
                     </div>
                 </Box>
             </Box>
