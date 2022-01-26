@@ -13,6 +13,8 @@ import ShareIcon from '@mui/icons-material/Share';
 import EuroIcon from '@mui/icons-material/Euro';
 import './../../../assets/css/Item.scss'
 import SnackBar from '../../UICommonComp/SnackBar';
+import { Link } from 'react-router-dom';
+import InfoIcon from '@mui/icons-material/Info';
 
 function Item({data}) {
     const [open, setOpen] = useState(false);
@@ -37,6 +39,11 @@ function Item({data}) {
                     <Avatar sx={{ bgcolor: blue[500] }} aria-label="recipe">
                         {(categoryIndex.slice(0, 1).toUpperCase())}
                     </Avatar>
+                }
+                action={
+                    <Link className="detail__hover"  to={`/detail/${data?.id}`}>
+                        <InfoIcon/>
+                    </Link>
                 }
                 title={data?.model}
                 subheader={`By ${data?.manufacturer} ®`}

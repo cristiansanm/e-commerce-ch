@@ -52,7 +52,7 @@ export default function ControlledSelectNB({header, listCategory, formatLink}) {
               style= {({ isActive }) => 
                 isActive ? activeStyle : undefined }>
                 <List component="div" disablePadding>
-                    <ListItemButton key={key} className="button__hover" sx={{ pl: 4, }}>
+                    <ListItemButton onClick={handleClick}key={key} className="button__hover" sx={{ pl: 4, }}>
                         <ListItemIcon>
                         <MusicNoteIcon sx={{color: "white"}}/>
                         </ListItemIcon>
