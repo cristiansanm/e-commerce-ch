@@ -1,5 +1,5 @@
 import React from 'react';
-
+//TODO: move magic number to filters.js file
 const MAGIC_NUMBER = 100;
 const ItemDetailed = ({ itemData }) => {
   return (
