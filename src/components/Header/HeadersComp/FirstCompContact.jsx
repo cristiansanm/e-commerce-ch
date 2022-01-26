@@ -5,6 +5,7 @@ import './../../../assets/css/HomeStyles/Header.scss';
 import PhoneIcon from '@mui/icons-material/Phone';
 import ControlledSelect from './ControlledSelect';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+/* TODO: Add views to all the buttons */
 const useStyles = makeStyles({
     secondPart :{
         display: 'flex',

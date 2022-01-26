@@ -2,6 +2,7 @@ import React from 'react'
 import Options from '../UICommonComp/Options'
 import "./../../assets/css/NavBar.scss"
 import ControlledSelectNB from './ControlledSelectNB'
+//TODO: add view to contacto and descuentos
 function NavBar() {
     return (
         <div className="bg__navbar">

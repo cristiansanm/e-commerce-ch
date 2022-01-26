@@ -10,7 +10,8 @@ const formatCategory = {
     "percussion": "Percusión",
     "fx": "Efectos",
     "headphones": "Audifonos",
-    "ampli": "Amplificadores"
+    "ampli": "Amplificadores",
+    "piano": "Piano"
 }
 function ItemListContainer() {
     const { categoryName } = useParams();

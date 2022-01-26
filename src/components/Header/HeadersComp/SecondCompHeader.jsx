@@ -6,6 +6,7 @@ import './../../../assets/css/HomeStyles/Header.scss'
 import TextInput from './../../UICommonComp/TextInput';
 import QuickActions from './QuickActions';
 import { Link } from 'react-router-dom';
+//TODO: make the search bar useable
 const useStyles = makeStyles({
     logoGrid:{
         display:"flex",
