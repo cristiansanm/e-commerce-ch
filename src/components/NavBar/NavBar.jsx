@@ -37,16 +37,18 @@ const styleLink = {
     letterSpacing: "0.00938em",
     textTransform: "capitalize",
 }
-const routesCategory = ['Guitarras', 'Bajos', 'Pianos', 'Percusion'];
-const routesOthers = ['Amplis', 'Clases', 'Conciertos'];
+const routesCategory = ['Guitarras', 'Bajos', 'Pianos', 'Percusion', 'Efectos'];
+const routesOthers = [ 'Auriculares','Amplis', 'Clases', 'Conciertos'];
 const formatLinks = {
-    Guitarras: '/category/guitars',
-    Bajos: '/category/basses',
-    Pianos: '/category/pianos',
-    Percusion: '/category/percusion',
+    Guitarras: '/category/guitar',
+    Bajos: '/category/bass',
+    Pianos: '/category/piano',
+    Percusion: '/category/percussion',
+    Efectos: '/category/fx',
 }
 const formatOthers = {
-    Amplis: '/category/amplis',
-    Clases: '/category/clases',
-    Conciertos: '/category/conciertos',
+    Amplis: '/category/ampli',
+    Clases: '/category/classes',
+    Conciertos: '/category/concerts',
+    Auriculares: '/category/headphones'
 }

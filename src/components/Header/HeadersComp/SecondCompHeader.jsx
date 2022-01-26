@@ -7,9 +7,6 @@ import TextInput from './../../UICommonComp/TextInput';
 import QuickActions from './QuickActions';
 import { Link } from 'react-router-dom';
 const useStyles = makeStyles({
-    gridContainer:{
-
-    },
     logoGrid:{
         display:"flex",
         justifyContent:"flex-start",
@@ -22,7 +19,7 @@ function SecondCompHeader() {
     const classes = useStyles();
     return (
         <div className="header__container">
-            <Grid mt={2} className={classes.gridContainer} container>
+            <Grid mt={2} container>
                 <Grid className={classes.logoGrid} item xs={5} sm={3}>
                     <Link to="/">
                         <img 

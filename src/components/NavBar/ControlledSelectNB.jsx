@@ -8,6 +8,8 @@ import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import MusicNoteIcon from '@mui/icons-material/MusicNote';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
+import { NavLink } from 'react-router-dom';
+import { activeStyle } from './../../assets/js/styleObjects'
 
 export default function ControlledSelectNB({header, listCategory, formatLink}) {
   const [open, setOpen] = React.useState(false);
@@ -44,7 +46,11 @@ export default function ControlledSelectNB({header, listCategory, formatLink}) {
       </ListItemButton>
       <Collapse in={open} timeout="auto" unmountOnExit>
         {(listCategory).map((element, key) => 
-            <a key={key} href={formatLink[element]}>
+            <NavLink 
+              key={key} 
+              to={formatLink[element]}
+              style= {({ isActive }) => 
+                isActive ? activeStyle : undefined }>
                 <List component="div" disablePadding>
                     <ListItemButton key={key} className="button__hover" sx={{ pl: 4, }}>
                         <ListItemIcon>
@@ -53,7 +59,7 @@ export default function ControlledSelectNB({header, listCategory, formatLink}) {
                         <ListItemText primary={element}/>
                     </ListItemButton>
                 </List>
-            </a>
+            </NavLink>
         )}
         
         
