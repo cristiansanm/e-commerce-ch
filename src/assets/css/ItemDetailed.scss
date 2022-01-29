@@ -1,0 +1,76 @@
+.item__detailed__container{
+    max-width: 1320px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row;
+    @media only screen and (max-width: 1346px){
+        max-width: 1320px;
+        margin: 0 auto;
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        padding: 0 20px;
+    }
+}
+.img__container{
+    padding: 2rem;
+    img{
+        max-width: 600px;
+    }
+}
+.item__info__container{
+    padding: 2rem;
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    @media only screen and (max-width: 1346px){
+        padding: 2rem;
+        width: 93%;
+        display: flex;
+        flex-flow: column wrap;
+    }
+    span:first-child{
+        color: rgb(195, 192, 192);
+        text-transform: uppercase;
+        font-weight: bold;
+        float: left;
+    }
+    h1{
+        margin: 10px 0;
+        float: left;
+    }
+    h4{
+        margin: 10px 0;
+        font-size: 1.5rem;
+        font-weight: 800;
+    }
+    .stock__total{
+        color: rgb(167, 163, 163);
+        margin: 8px 0;
+    }
+}
+.product__colors__container{
+    margin: 10px 0;
+    display: flex;
+    display: flex;
+    flex-flow: column wrap;
+    .title{
+        font-size: 1.1rem;
+        font-weight: bold;
+        color:darkslategray
+    }
+}
+.colors__container{
+    margin: 5px 0;
+    display: flex;
+}
+.product__colors{
+    width: 25px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    padding: 2px;
+    margin-left: 5px;
+    color: gainsboro;
+    cursor: pointer;
+}

@@ -15,6 +15,8 @@ import './../../../assets/css/Item.scss'
 import SnackBar from '../../UICommonComp/SnackBar';
 import { Link } from 'react-router-dom';
 import InfoIcon from '@mui/icons-material/Info';
+import { MAGIC_NUMBER } from '../../../assets/js/helpers'
+import { itemCountMain } from '../../../assets/js/styleObjects'
 
 function Item({data}) {
     const [open, setOpen] = useState(false);
@@ -25,7 +27,6 @@ function Item({data}) {
     }
     let categoryIndex = data?.category;
     let price = data?.price;
-    const MAGIC_NUMBER=100;
     const onAdd = (count) => {
         setOpen(true);
         setType('success');
@@ -35,14 +36,19 @@ function Item({data}) {
         <>
             <Card sx={{ width: 345, margin: '0.5rem' }}>
             <CardHeader
+                sx={{
+                    '& span':{
+                        textAlign: 'center'
+                    }
+                }}
                 avatar={
                     <Avatar sx={{ bgcolor: blue[500] }} aria-label="recipe">
                         {(categoryIndex.slice(0, 1).toUpperCase())}
                     </Avatar>
                 }
                 action={
-                    <Link className="detail__hover"  to={`/detail/${data?.id}`}>
-                        <InfoIcon/>
+                    <Link title="Detalles" className="detail__hover"  to={`/detail/${data?.id}`}>
+                        <InfoIcon fontSize="large"/>
                     </Link>
                 }
                 title={data?.model}
@@ -56,10 +62,14 @@ function Item({data}) {
             />
             <CardContent>
                 <div className="price__container" aria-label="settings">
-                    <EuroIcon sx={{marginBottom: '-5px', marginRight: '5px'}}/>
+                    <EuroIcon sx={{marginTop: '-2px', marginRight: '5px'}}/>
                     <span>{price/MAGIC_NUMBER}.00</span>
                 </div>
-                <ItemCount stock={data?.stock} onAdd={onAdd}/>
+                <ItemCount 
+                    stock={data?.stock} 
+                    onAdd={onAdd}
+                    styleCount={itemCountMain}
+                />
             </CardContent>
             <CardActions disableSpacing>
                 <IconButton aria-label="add to favorites">

@@ -9,7 +9,7 @@ import ExpandMore from '@mui/icons-material/ExpandMore';
 import MusicNoteIcon from '@mui/icons-material/MusicNote';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import { NavLink } from 'react-router-dom';
-import { activeStyle } from './../../assets/js/styleObjects'
+import { activeStyle, listNavStyle } from './../../assets/js/styleObjects'
 
 export default function ControlledSelectNB({header, listCategory, formatLink}) {
   const [open, setOpen] = React.useState(false);
@@ -19,24 +19,9 @@ export default function ControlledSelectNB({header, listCategory, formatLink}) {
   };
   return (
     <List
-      sx={
-          { 
-              width: "10%", 
-              maxWidth: 360,
-              minWidth: 200, 
-              background: 'linear-gradient(to bottom, #0943AEFF, #374e81);',
-              '& a': { 
-                  textDecoration: 'none',
-                  color: 'white'
-              },
-              '& span':{
-                fontFamily: 'Rubik,sans-serif',
-                fontWeight: '600',
-              }
-            }}
+      sx={listNavStyle}
       component="nav"
     >
-      
       <ListItemButton className="button__hover" onClick={handleClick}>
         <ListItemIcon>
           <AddCircleIcon sx={{color: "white"}}/>
@@ -52,7 +37,11 @@ export default function ControlledSelectNB({header, listCategory, formatLink}) {
               style= {({ isActive }) => 
                 isActive ? activeStyle : undefined }>
                 <List component="div" disablePadding>
-                    <ListItemButton onClick={handleClick}key={key} className="button__hover" sx={{ pl: 4, }}>
+                    <ListItemButton 
+                      onClick={handleClick}
+                      key={key} 
+                      className="button__hover" 
+                      sx={{ pl: 4, }}>
                         <ListItemIcon>
                         <MusicNoteIcon sx={{color: "white"}}/>
                         </ListItemIcon>

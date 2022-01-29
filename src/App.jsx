@@ -5,6 +5,7 @@ import Cart from './components/Cart';
 import { ItemDetailContainer } from './components/ItemDetail/ItemDetailContainer';
 import NavBar from './components/NavBar/NavBar';
 import HeaderContainer from './components/Header/HeaderContainer';
+import Contact from './components/Contact';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route exact path="/category/:categoryName" element={<ContainerHome />}/>
           <Route exact path="/cart" element={<Cart/>}/>
           <Route exact path="/detail/:productId" element={<ItemDetailContainer />}/>
+          <Route exact path="/contact" element={<Contact/>} />
         </Routes>
       </div>
     </BrowserRouter>

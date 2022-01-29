@@ -2,7 +2,8 @@ import { Button, IconButton } from '@mui/material'
 import React, { useState } from 'react'
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
-function ItemCount({ stock, initial, onAdd}) {
+import '../../../assets/css/Item.scss'
+function ItemCount({ stock, initial, onAdd, styleCount}) {
     const [count, setCount] = useState(1);
     const handleAdd = () =>{
         setCount(count+1);
@@ -11,7 +12,7 @@ function ItemCount({ stock, initial, onAdd}) {
         setCount(count-1);
     }
     return (
-        <>  
+        <div style={styleCount} className="item__count">  
             <div>
                 <IconButton 
                     disabled = {count === 1 ? true : false}
@@ -39,7 +40,7 @@ function ItemCount({ stock, initial, onAdd}) {
                 </Button>
             </div>
                 
-        </>
+        </div>
     )
 }
 

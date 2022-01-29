@@ -2,17 +2,9 @@ import React, { useState, useEffect } from 'react'
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
 import { invokeData } from '../../../assets/js/mockupData';
-import HeaderViews from './../../UICommonComp/HeaderViews'
+import HeaderViews from './../../UICommonComp/HeaderViews';
+import { formatCategory } from '../../../assets/js/formaters'
 
-const formatCategory = {
-    "guitar": "Guitarras",
-    "bass": "Bajos",
-    "percussion": "Percusión",
-    "fx": "Efectos",
-    "headphones": "Audifonos",
-    "ampli": "Amplificadores",
-    "piano": "Piano"
-}
 function ItemListContainer() {
     const { categoryName } = useParams();
     const [dataLoaded, setDataLoaded] = useState([]);
