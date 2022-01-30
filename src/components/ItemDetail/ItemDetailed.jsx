@@ -7,7 +7,13 @@ import Loader from '../UICommonComp/Loader';
 import ProductColors from './ProductColors';
 import ItemCount from '../Home/ItemList/ItemCount';
 import SnackBar from '../UICommonComp/SnackBar';
-import { itemCountDetail } from '../../assets/js/styleObjects'
+import { itemCountDetail, backToMenuButton } from '../../assets/js/styleObjects';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { IconButton } from '@mui/material';
+
+const handleRedirectHome = () => {
+  window.open("/", "_self")
+}
 const ItemDetailed = ({ itemData }) => {
   const [value, setValue] = useState();
   const [open, setOpen] = useState(false);
@@ -26,6 +32,14 @@ const ItemDetailed = ({ itemData }) => {
       {itemData ? (
         <>
         <HeaderViews viewTittle="Detalle"/>
+        <IconButton 
+          sx={backToMenuButton} 
+          variant="contained" 
+          onClick={handleRedirectHome}
+          title="Home"
+          >
+          <ArrowBackIcon/>
+        </IconButton>
         <div className="item__detailed__container">
           <div className="img__container">
             <img src={itemData?.img} alt={itemData?.model}/>

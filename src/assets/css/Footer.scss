@@ -1,0 +1,64 @@
+.footer__container{
+    color: gainsboro;
+    background-color: #151c24;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    .footer__content{
+        max-width: 1320px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        padding: 2rem;
+        justify-content: space-between;
+        border-bottom: 3px solid gainsboro;
+        @media only screen and (max-width: 1346px){
+            width: 94%;
+        }
+    }
+    .information{
+        text-align: center;
+    }
+    .footer__item{
+        .mark__info{
+            padding-left: 2rem;
+            margin-top: 20px;
+            p{
+                font-weight: 700;
+                margin:8px 0;
+                font-size: 0.95rem;
+            }
+        }
+        .social__media{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            margin-top: 1rem;
+            div{
+                border: 3px solid gainsboro;
+                padding: 0.8rem;
+                border-radius: 50%;
+                font-size: 1.2rem;
+                cursor: pointer;
+                
+            }
+            div:hover{
+                color: rgb(170, 170, 170);
+                border: 3px solid rgb(170, 170, 170);
+            }
+        }
+        display: flex;
+        flex-flow: column wrap;
+        width: 30%;
+        a, a:visited{
+            color:gainsboro;
+            text-decoration: none;
+            margin-top: 25px;
+        }
+        a:hover{
+            color:cornflowerblue;
+            font-weight: bold;
+        }
+    }
+}
+

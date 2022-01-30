@@ -37,3 +37,30 @@ export const itemCountDetail = {
     display:'flex',
     flexDirection: 'column',
 }
+export const scrollTopButton = {
+    background: '#1565c0',
+    position: 'fixed',
+    bottom: '2%',
+    right: '1.5%',
+    borderRadius: '50%',
+    padding: '1rem',
+    color: 'white',
+    '&:hover':{
+        background: '#5c90cb',
+    }
+}
+export const backToMenuButton = {
+    marginTop: '10px',
+    marginLeft: '10px',
+    background: '#1565c0',
+    color: 'white',
+    '&:hover':{
+        background: '#5c90cb',
+    }
+}
+export const textInputFooter = {
+    marginTop: '20px',
+    background: 'white',
+    borderRadius: '4px',
+}
+

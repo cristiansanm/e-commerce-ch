@@ -5,6 +5,7 @@ import ControlledSelectNB from './ControlledSelectNB'
 import { mainLinkNavStyle } from '../../assets/js/styleObjects'
 import { routesCategory, routesOthers, formatMainLinks, formatOtherLinks } from '../../assets/js/formaters'
 //TODO: add view to contacto and descuentos
+
 function NavBar() {
     return (
         <div className="bg__navbar">

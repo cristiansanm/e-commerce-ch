@@ -20,7 +20,7 @@ export default function ControlledSelect() {
         value={age}
         label="Moneda"
         onChange={handleChange}
-        sx={{height:40, width:120, paddingTop: 1}}
+        sx={{height:40, width:120, paddingTop: '5px', paddingLeft: '25%'}}
       >
         <MenuItem value="">
           <em>None</em>
