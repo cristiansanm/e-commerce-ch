@@ -6,6 +6,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import  "./../../../assets/css/HomeStyles/Header.scss";
 import { makeStyles } from '@mui/styles';
 import { Link } from 'react-router-dom';
+import { useCartContext } from '../../../context/CartContext'
 const useStyles = makeStyles({
     quickButtonsContainer:{
         display: "flex",
@@ -14,6 +15,7 @@ const useStyles = makeStyles({
     }
 })
 function QuickActions({itemWishList=10, itemOrders=14, itemCart=10}) {
+    
     const classes = useStyles();
     return (
         <>
@@ -21,7 +23,7 @@ function QuickActions({itemWishList=10, itemOrders=14, itemCart=10}) {
                 <Box component="div" className="quick__buttons">
                     <div>
                         <FavoriteIcon 
-                            color="secondary"
+                            color="error"
                             sx={{height:40, width:30, marginRight: 1}} />
                         </div>
                     <div>
@@ -40,19 +42,21 @@ function QuickActions({itemWishList=10, itemOrders=14, itemCart=10}) {
                         <span>{itemOrders}</span>
                     </div>
                 </Box>
-                <Box component="div" className="quick__buttons">
-                    <div>
-                        <ShoppingCartIcon 
-                            sx={{height:40, width:30, marginRight: 1}} 
-                            color="disabled"
-                        />
-                    </div>
-                    <div>
-                        <Link className="button__container__options" to="/cart">
-                            <span>Cart</span>
-                            <span>{itemCart}</span>
-                        </Link>
-                    </div>
+                <Box component="div">
+                    <Link to="/cart" className="quick__buttons">
+                        <div>
+                            <ShoppingCartIcon 
+                                sx={{height:40, width:30, marginRight: 1}} 
+                                color="secondary"
+                            />
+                        </div>
+                        <div>
+                            <div className="button__container__options">
+                                <span>Cart</span>
+                                <span>{itemCart}</span>
+                            </div>
+                        </div>
+                    </Link>
                 </Box>
             </Box>
                     

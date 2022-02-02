@@ -6,7 +6,9 @@ import SkeletonLoader from './UICommonComp/SkeletonLoader';
 const Cart = () => {
   const { emptyCart } = useCartContext();
   //definir la logica
-  const getListOfCart = JSON.parse(localStorage.getItem('myCartList'));
+  const getListOfCart = localStorage.getItem('myCartList') === undefined ?
+    [] :
+    JSON.parse(localStorage.getItem('myCartList'));
   const listOfCart = getListOfCart.arrayCartList.length > 0 ? getListOfCart.arrayCartList : []
   return (
     <div>

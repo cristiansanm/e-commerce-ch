@@ -30,7 +30,7 @@ const Footer = () => {
         </div>
         <div className="footer__item information">
            <h2>Información</h2>
-           <a href="#">Cart</a>
+           <Link to="/cart">Cart</Link>
            <a href="#">Sign In</a>
            <a href="#">Sign Up</a>
            <a href="#">FAQs</a>
