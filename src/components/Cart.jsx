@@ -22,7 +22,7 @@ const Cart = () => {
         ) : (
           <SkeletonLoader/>
         )}
-        {listOfCart.length > 0 && (<Button color="error" onClick={()=>emptyCart()} >Vaciar</Button>)}
+        {/* {listOfCart.length > 0 && (<Button color="error" onClick={()=>emptyCart()} >Vaciar</Button>)} */}
     </div>
     );
 };
