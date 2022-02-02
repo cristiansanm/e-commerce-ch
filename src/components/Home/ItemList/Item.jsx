@@ -17,7 +17,7 @@ import { Link } from 'react-router-dom';
 import InfoIcon from '@mui/icons-material/Info';
 import { MAGIC_NUMBER } from '../../../assets/js/helpers'
 import { itemCountMain } from '../../../assets/js/styleObjects'
-
+import { useCartContext } from '../../../context/CartContext'
 function Item({data}) {
     const [open, setOpen] = useState(false);
     const [message, setMessage] = useState('Default Message');
@@ -25,12 +25,14 @@ function Item({data}) {
     const handleClose = () => {
         setOpen(false);
     }
+    const { addToCart } = useCartContext();
     let categoryIndex = data?.category;
     let price = data?.price;
     const onAdd = (count) => {
         setOpen(true);
         setType('success');
         setMessage(`Se agregó ${count} producto(s) al carrito`)
+        addToCart({"item":{...data}, "quantity": count})
     }
     return (
         <>

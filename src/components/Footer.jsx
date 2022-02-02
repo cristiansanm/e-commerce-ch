@@ -22,10 +22,10 @@ const Footer = () => {
               <p>Email: support@hearyours.com</p>
             </div>
             <div className="social__media">
-              <div><i class="fab fa-facebook"></i></div>
-              <div><i class="fab fa-instagram"></i></div>
-              <div><i class="fab fa-twitter"></i></div>
-              <div><i class="fab fa-tiktok"></i></div>
+              <div><i className="fab fa-facebook"></i></div>
+              <div><i className="fab fa-instagram"></i></div>
+              <div><i className="fab fa-twitter"></i></div>
+              <div><i className="fab fa-tiktok"></i></div>
             </div>
         </div>
         <div className="footer__item information">

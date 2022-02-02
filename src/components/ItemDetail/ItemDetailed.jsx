@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { MAGIC_NUMBER } from '../../assets/js/helpers'
 import HeaderViews from '../UICommonComp/HeaderViews';
 import Rating from '@mui/material/Rating';
@@ -10,7 +10,8 @@ import SnackBar from '../UICommonComp/SnackBar';
 import { itemCountDetail, backToMenuButton } from '../../assets/js/styleObjects';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { IconButton } from '@mui/material';
-
+import { useCartContext } from '../../context/CartContext'
+//Redirección a home
 const handleRedirectHome = () => {
   window.open("/", "_self")
 }
@@ -19,6 +20,7 @@ const ItemDetailed = ({ itemData }) => {
   const [open, setOpen] = useState(false);
   const [message, setMessage] = useState('Default Message');
   const [type, setType] = useState('info');
+  const { addToCart } = useCartContext();
   const handleClose = () => {
       setOpen(false);
   }
@@ -26,6 +28,7 @@ const ItemDetailed = ({ itemData }) => {
     setOpen(true);
     setType('success');
     setMessage(`Se agregó ${count} producto(s) al carrito`)
+    addToCart({"item":{...itemData}, "quantity": count})
   }
   return (
     <>
