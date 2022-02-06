@@ -31,11 +31,6 @@ function Item({data}) {
                             {(categoryIndex.slice(0, 1).toUpperCase())}
                         </Avatar>
                     }
-                    // action={
-                    //     <Link title="Detalles" className="detail__hover"  to={`/detail/${data?.id}`}>
-                    //         <InfoIcon fontSize="large"/>
-                    //     </Link>
-                    // }
                     title={data?.model}
                     subheader={`By ${data?.manufacturer} ®`}
                 />
@@ -59,7 +54,6 @@ function Item({data}) {
                             Ver detalle
                         </Button>
                     </Link>
-                    {data?.stock <= 0 && <div>Fuera de Stock</div>}
                 </CardContent>
                 <CardActions disableSpacing>
                     <IconButton aria-label="add to favorites">

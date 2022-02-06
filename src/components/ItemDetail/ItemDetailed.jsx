@@ -21,12 +21,15 @@ const ItemDetailed = ({ itemData }) => {
   const [type, setType] = useState('info');
   const { addToCart } = useCartContext();
   const handleClose = () => {
+    
     setOpen(false);
   }
   const handleIsOnCart = () => {
+
     setIsOnCart(false);
   }
   const onAdd = (count) => {
+
     setOpen(true);
     setType('success');
     setMessage(`Se agregó ${count} producto(s) al carrito`)

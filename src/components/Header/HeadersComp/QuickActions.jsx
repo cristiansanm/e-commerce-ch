@@ -1,5 +1,4 @@
-import { Box } from '@mui/material'
-import React from 'react';
+import { Box } from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import DeliveryDiningIcon from '@mui/icons-material/DeliveryDining';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
@@ -7,6 +6,7 @@ import  "./../../../assets/css/HomeStyles/Header.scss";
 import { makeStyles } from '@mui/styles';
 import { Link } from 'react-router-dom';
 import { useCartContext } from '../../../context/CartContext'
+
 const useStyles = makeStyles({
     quickButtonsContainer:{
         display: "flex",
@@ -14,8 +14,8 @@ const useStyles = makeStyles({
         justifyContent: "space-around"
     }
 })
-function QuickActions({itemWishList=10, itemOrders=14, itemCart=10}) {
-    
+function QuickActions({itemWishList=10, itemOrders=14}) {
+    const { getTotalItemsOnCart } = useCartContext();
     const classes = useStyles();
     return (
         <>
@@ -53,7 +53,7 @@ function QuickActions({itemWishList=10, itemOrders=14, itemCart=10}) {
                         <div>
                             <div className="button__container__options">
                                 <span>Cart</span>
-                                <span>{itemCart}</span>
+                                <span>{getTotalItemsOnCart()}</span>
                             </div>
                         </div>
                     </Link>

@@ -1,28 +1,29 @@
-import { Button } from '@mui/material';
-import React from 'react';
-import { useCartContext } from './../context/CartContext'
-import SkeletonLoader from './UICommonComp/SkeletonLoader';
-//TODO: add a view to this component
+import { DeleteForever } from '@mui/icons-material';
+import { Button, IconButton } from '@mui/material';
+import { useCartContext } from './../context/CartContext';
 const Cart = () => {
-  const { emptyCart } = useCartContext();
-  //definir la logica
-  const getListOfCart = localStorage.getItem('myCartList') === undefined ?
-    [] :
-    JSON.parse(localStorage.getItem('myCartList'));
-  const listOfCart = getListOfCart.arrayCartList.length > 0 ? getListOfCart.arrayCartList : []
+  const { cartList , emptyCart, removeItem } = useCartContext();
+
   return (
     <div>
-        Soy Cart
-        {listOfCart.length > 0 ? (
-          listOfCart.map((item, index) => 
-            <div>
-              hola
+        {(cartList?.length > 0) ? (
+          cartList.map((data, index) => 
+            <div style={{width: '100%', marginLeft: '40%'}} key={index}>
+              {`id: ${data?.item.id}, nombre: ${data?.item.model}, cantidad: ${data?.quantity}`}
+              <IconButton
+                color="error"
+                onClick={() => removeItem(data?.item.id)}>
+                <DeleteForever/>
+              </IconButton>
             </div>
           )
         ) : (
-          <SkeletonLoader/>
+          <h2 style={{width: '100%', textAlign: 'center'}}>No hay nada en tu cart aún :(</h2>
         )}
-        {/* {listOfCart.length > 0 && (<Button color="error" onClick={()=>emptyCart()} >Vaciar</Button>)} */}
+        {cartList?.length > 0 && 
+          <div style={{marginLeft: '50%', padding: '20px 0'}}>
+            <Button variant="contained" color="error" onClick={()=>emptyCart()} >Vaciar Carrito</Button>
+          </div>}
     </div>
     );
 };
