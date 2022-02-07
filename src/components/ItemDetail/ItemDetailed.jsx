@@ -70,7 +70,9 @@ const ItemDetailed = ({ itemData }) => {
             {isOnCart ? (
               <>
                 <div className="add__cart__buttons">
-                  <Link to="/cart">
+                  <Link 
+                    style={{textDecoration: 'none'}} 
+                    to="/cart">
                     <Button 
                       color="secondary" 
                       variant="contained"

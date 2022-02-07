@@ -45,7 +45,9 @@ function Item({data}) {
                         <EuroIcon sx={{marginTop: '-2px', marginRight: '5px'}}/>
                         <span>{price/MAGIC_NUMBER}.00</span>
                     </div>
-                    <Link to={`/detail/${data?.id}`}>
+                    <Link 
+                        style={{textDecoration: 'none'}} 
+                        to={`/detail/${data?.id}`}>
                         <Button
                             variant="contained"
                             color="primary"
