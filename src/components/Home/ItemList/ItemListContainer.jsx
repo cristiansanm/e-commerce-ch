@@ -9,14 +9,14 @@ import { getFirestore, collection, doc, getDoc, getDocs } from 'firebase/firesto
 function ItemListContainer() {
     const { categoryName } = useParams();
     const [dataLoaded, setDataLoaded] = useState([]);
-    const [dataDb, setDataDb]= useState([])
+    // const [dataDb, setDataDb]= useState([])
     useEffect(()=>{
-        const db = getFirestore();
+        // const db = getFirestore();
 
-        const queryCollection = collection(db, 'items');
+        // const queryCollection = collection(db, 'items');
 
-        getDocs(queryCollection)
-        .then(res => console.log(res))
+        // getDocs(queryCollection)
+        // .then(res => console.log(res))
         const load = async() => {
             try {
                 if(categoryName){
