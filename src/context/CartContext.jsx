@@ -17,13 +17,7 @@ const CartContextProvider = ({ children }) => {
 
       //Añade la cantidad adicional al producto
       newCartList.map( element =>
-        { 
-          let totalQuantity = item.quantity
-          if(element.item.id === item.item.id){
-            return totalQuantity += item.quantity + element.quantity
-          }
-          return totalQuantity
-        }
+        (element.item.id === item.item.id) ? element.quantity += item.quantity : element.quantity
         )
         
       setCartList([...newCartList]);
