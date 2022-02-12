@@ -13,12 +13,19 @@ const CartContextProvider = ({ children }) => {
   //Añade al carrito nuevos items o más cantidad
   function addToCart(item){
     if(isInCart(item.item.id)){
-
+      console.log("está en cart", item.item.id)
       let newCartList = [...cartList];
 
       //Añade la cantidad adicional al producto
       newCartList.map( element =>
-        element.quantity += item.quantity)
+        { 
+          let totalQuantity = item.quantity
+          if(element.item.id === item.item.id){
+            return totalQuantity += item.quantity + element.quantity
+          }
+          return totalQuantity
+        }
+        )
         
       setCartList([...newCartList]);
     }
