@@ -1,11 +1,9 @@
 import { Box } from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import DeliveryDiningIcon from '@mui/icons-material/DeliveryDining';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import  "./../../../assets/css/HomeStyles/Header.scss";
 import { makeStyles } from '@mui/styles';
-import { Link } from 'react-router-dom';
-import { useCartContext } from '../../../context/CartContext'
+import CartWidget from '../../Cart/CartWidget';
 
 const useStyles = makeStyles({
     quickButtonsContainer:{
@@ -15,7 +13,6 @@ const useStyles = makeStyles({
     }
 })
 function QuickActions({itemWishList=10, itemOrders=14}) {
-    const { getTotalItemsOnCart } = useCartContext();
     const classes = useStyles();
     return (
         <>
@@ -43,20 +40,7 @@ function QuickActions({itemWishList=10, itemOrders=14}) {
                     </div>
                 </Box>
                 <Box component="div">
-                    <Link to="/cart" className="quick__buttons">
-                        <div>
-                            <ShoppingCartIcon 
-                                sx={{height:40, width:30, marginRight: 1}} 
-                                color="secondary"
-                            />
-                        </div>
-                        <div>
-                            <div className="button__container__options">
-                                <span>Cart</span>
-                                <span>{getTotalItemsOnCart()}</span>
-                            </div>
-                        </div>
-                    </Link>
+                    <CartWidget />
                 </Box>
             </Box>
                     

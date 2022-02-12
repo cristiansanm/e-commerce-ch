@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ContainerHome from './components/Home/ContainerHome';
-import Cart from './components/Cart';
+import Cart from './components/Cart/Cart';
 import { ItemDetailContainer } from './components/ItemDetail/ItemDetailContainer';
 import NavBar from './components/NavBar/NavBar';
 import HeaderContainer from './components/Header/HeaderContainer';
