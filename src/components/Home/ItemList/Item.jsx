@@ -43,7 +43,7 @@ function Item({data}) {
                 <CardContent>
                     <div className="price__container" aria-label="settings">
                         <EuroIcon sx={{marginTop: '-2px', marginRight: '5px'}}/>
-                        <span>{price/MAGIC_NUMBER}.00</span>
+                        <span>{(price/MAGIC_NUMBER).toFixed(2)}</span>
                     </div>
                     <Link 
                         style={{textDecoration: 'none'}} 
