@@ -4,10 +4,19 @@ import NoContent from '../UICommonComp/NoContent';
 import CartTable from './CartTable';
 import "../../assets/css/Cart.scss";
 import { Link } from 'react-router-dom';
+// import { addDoc, collection, getFirestore }  from 'firebase/firestore';
 
 const Cart = () => {
   const { cartList , emptyCart } = useCartContext();
-
+  // const totalPrice = calculateTotalPrice();
+  // const setOrder = async() =>{
+  //   console.log("Orden Completada")
+  //   // const db = getFirestore();
+  //   // const ordersCollection = collection(db, 'items');
+  //   // await addDoc( ordersCollection, orderData )
+  //   // .then( res => console.log(res) )
+      
+  // }
   return (
     <div>
         {(cartList?.length > 0) ? (
@@ -33,6 +42,10 @@ const Cart = () => {
                 Seguir Comprando
               </Button>
             </Link>
+            {/* <Button
+              onClick={setOrder}>
+              Realizar Pedido
+            </Button> */}
           </div>}
     </div>
     );

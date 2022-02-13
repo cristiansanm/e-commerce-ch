@@ -41,15 +41,16 @@ const ItemDetailed = ({ itemData }) => {
       {itemData ? (
         <>
         <HeaderViews viewTittle="Detalle"/>
-        <Link to="/">
-          <IconButton 
-            sx={backToMenuButton} 
-            variant="contained"
-            title="Home"
-            >
+        
+        <IconButton 
+          sx={backToMenuButton} 
+          variant="contained"
+          title="Home"
+          onClick = {()=>window.history.back()}
+        >
             <ArrowBackIcon/>
-          </IconButton>
-        </Link>
+        </IconButton>
+        
           
         <div className="item__detailed__container">
           <div className="img__container">

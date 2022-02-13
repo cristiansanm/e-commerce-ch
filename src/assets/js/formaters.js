@@ -5,10 +5,11 @@ export const formatCategory = {
     "fx": "Efectos",
     "headphones": "Audifonos",
     "ampli": "Amplificadores",
-    "piano": "Pianos"
+    "piano": "Pianos",
+    "accessories": "Accesorios"
 }
 export const routesCategory = ['Guitarras', 'Bajos', 'Pianos', 'Percusion', 'Efectos'];
-export const routesOthers = [ 'Auriculares','Amplis', 'Clases', 'Conciertos'];
+export const routesOthers = [ 'Auriculares','Amplis', 'Accesorios'];
 export const formatMainLinks = {
     Guitarras: '/category/guitar',
     Bajos: '/category/bass',
@@ -18,7 +19,6 @@ export const formatMainLinks = {
 }
 export const formatOtherLinks = {
     Amplis: '/category/ampli',
-    Clases: '/category/classes',
-    Conciertos: '/category/concerts',
+    Accesorios: '/category/accessories',
     Auriculares: '/category/headphones'
 }

@@ -7,23 +7,20 @@ const CartWidget = () => {
   const { getTotalItemsOnCart } = useCartContext();
   return (
     <>
-        {getTotalItemsOnCart() > 0 && (
-            <Link to="/cart" className="quick__buttons">
-                <div>
-                    <ShoppingCartIcon 
-                        sx={{height:40, width:30, marginRight: 1}} 
-                        color="secondary"
-                    />
-                </div>
-                <div>
-                    <div className="button__container__options">
-                        <span>Cart</span>
-                            <span>{getTotalItemsOnCart()}</span>
-                        </div>
-                </div>
-            </Link> 
-        )}
-        
+        <Link to="/cart" className="quick__buttons">
+            <div>
+                <ShoppingCartIcon 
+                    sx={{height:40, width:30, marginRight: 1}} 
+                    color={ getTotalItemsOnCart() > 0 ? "secondary" : "disabled" }
+                />
+            </div>
+            <div>
+                <div className="button__container__options">
+                    <span>Cart</span>
+                        <span>{getTotalItemsOnCart()}</span>
+                    </div>
+            </div>
+        </Link> 
     </>
   )
 }

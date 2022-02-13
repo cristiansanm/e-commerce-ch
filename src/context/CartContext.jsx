@@ -1,5 +1,4 @@
 import { createContext, useState, useContext } from 'react';
-import { MAGIC_NUMBER } from "../assets/js/helpers"
 
 const cartContext = createContext([])
 export const useCartContext = () => useContext(cartContext);
@@ -14,15 +13,18 @@ const CartContextProvider = ({ children }) => {
   function addToCart(item){
     if(isInCart(item.item.id)){
       let newCartList = [...cartList];
-
+      
       //Añade la cantidad adicional al producto
       newCartList.map( element =>
-        (element.item.id === item.item.id) ? element.quantity += item.quantity : element.quantity
+
+          (element.item.id === item.item.id) ? element.quantity += item.quantity : element.quantity
+
         )
         
       setCartList([...newCartList]);
     }
     else{
+      console.log("El item es ", item)
       setCartList([...cartList, item]);
     }
     
@@ -57,14 +59,15 @@ const CartContextProvider = ({ children }) => {
 
   //calcula el precio a cobrar por cada articulo
   function calculateSubPrice(quantity, price){
-    return quantity * price / MAGIC_NUMBER;
+    return quantity * price ;
   }
 
+  //Calcula el valor total de la compra
   function calculateTotalPrice(){
     let total = 0;
     cartList?.map((row) => 
       total += row.item.price * row.quantity)
-    return total/MAGIC_NUMBER;
+    return total;
   }
   return (
     <cartContext.Provider value={

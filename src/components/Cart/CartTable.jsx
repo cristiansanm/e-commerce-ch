@@ -11,6 +11,8 @@ import { useCartContext } from '../../context/CartContext';
 import { IconButton } from '@mui/material';
 import { DeleteForever } from '@mui/icons-material';
 import "../../assets/css/Cart.scss"
+import { MAGIC_NUMBER } from "../../assets/js/helpers"
+import { formatCategory } from "../../assets/js/formaters"
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -53,6 +55,7 @@ export default function CartTable() {
                     </TableRow>
                 </TableHead>
                 <TableBody>
+                  {console.log(cartList)}
                   {cartList?.map((row, index) => (
                     <StyledTableRow key={index}>
                       <StyledTableCell component="th" scope="row">
@@ -62,10 +65,10 @@ export default function CartTable() {
                           alt="img"/>
                       </StyledTableCell>
                       <StyledTableCell align="right">{row.item.model}</StyledTableCell>
-                      <StyledTableCell align="right">{row.item.category}</StyledTableCell>
+                      <StyledTableCell align="right">{formatCategory[row.item.category]}</StyledTableCell>
                       <StyledTableCell align="right">{row.quantity}</StyledTableCell>
                       <StyledTableCell align="right">
-                          € {calculateSubPrice(row.quantity, row.item.price)}.00
+                          € {(calculateSubPrice(row.quantity, row.item.price) / MAGIC_NUMBER ).toFixed(2)}
                       </StyledTableCell>
                       <StyledTableCell align="right">
                           <IconButton
@@ -82,7 +85,7 @@ export default function CartTable() {
                           Total: 
                       </StyledTableCell>
                       <StyledTableCell align="right" colSpan={3}>
-                          € {calculateTotalPrice()}.00
+                          € {(calculateTotalPrice() / MAGIC_NUMBER).toFixed(2)}
                       </StyledTableCell>
                   </StyledTableRow>
                 </TableBody>
