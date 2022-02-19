@@ -24,7 +24,6 @@ const CartContextProvider = ({ children }) => {
       setCartList([...newCartList]);
     }
     else{
-      console.log("El item es ", item)
       setCartList([...cartList, item]);
     }
     

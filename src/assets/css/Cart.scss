@@ -5,6 +5,26 @@
 }
 .emptyCart__container{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     padding: 20px 0;
+    width: 50%;
+    margin: 0 auto;
+}
+.form__client{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.form__info{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+    color: gray;
+    width: 100%;
+    & span{
+        color: black;
+        margin-left: 10px;
+    }
+
 }

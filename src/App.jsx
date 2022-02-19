@@ -12,6 +12,7 @@ import { IconButton } from '@mui/material';
 import { ArrowUpwardRounded } from '@mui/icons-material';
 import { scrollTopButton } from './assets/js/styleObjects'
 import Footer from './components/Footer';
+import OrdersTable from './components/Orders/OrdersTable';
 
 function App() {
   // const [products, setProducts] = useState(invokeData);
@@ -43,6 +44,7 @@ function App() {
             <Route exact path="/cart" element={<Cart/>}/>
             <Route exact path="/detail/:productId" element={<ItemDetailContainer />}/>
             <Route exact path="/contact" element={<Contact/>} />
+            <Route exact path="/orders" element={<OrdersTable/>} />
           </Routes>
         </div>
       </CartContextProvider>

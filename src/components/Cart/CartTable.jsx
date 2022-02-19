@@ -55,7 +55,6 @@ export default function CartTable() {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                  {console.log(cartList)}
                   {cartList?.map((row, index) => (
                     <StyledTableRow key={index}>
                       <StyledTableCell component="th" scope="row">

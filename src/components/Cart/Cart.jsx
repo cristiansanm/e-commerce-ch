@@ -1,22 +1,20 @@
+import { useState } from "react";
 import { Button } from '@mui/material';
 import { useCartContext } from '../../context/CartContext';
 import NoContent from '../UICommonComp/NoContent';
 import CartTable from './CartTable';
 import "../../assets/css/Cart.scss";
 import { Link } from 'react-router-dom';
-// import { addDoc, collection, getFirestore }  from 'firebase/firestore';
+import ClientForm from './ClientForm';
+
 
 const Cart = () => {
-  const { cartList , emptyCart } = useCartContext();
-  // const totalPrice = calculateTotalPrice();
-  // const setOrder = async() =>{
-  //   console.log("Orden Completada")
-  //   // const db = getFirestore();
-  //   // const ordersCollection = collection(db, 'items');
-  //   // await addDoc( ordersCollection, orderData )
-  //   // .then( res => console.log(res) )
-      
-  // }
+  const { cartList , emptyCart, calculateTotalPrice } = useCartContext();
+  let totalAmount = calculateTotalPrice();
+  const [orderId, setOrderId] = useState('');
+  const handleOrderId = (id) => {
+    setOrderId(id);
+  }
   return (
     <div>
         {(cartList?.length > 0) ? (
@@ -28,25 +26,25 @@ const Cart = () => {
         )}
         {cartList?.length > 0 && 
           <div className="emptyCart__container">
+            <ClientForm 
+              itemsOnCart = { cartList } 
+              totalAmount = { totalAmount }
+              orderId = { handleOrderId }/>
+            <Link to="/">
+              <Button
+                variant="contained" 
+                color="primary">
+                Seguir Comprando
+              </Button>
+            </Link>
             <Button 
               variant="contained" 
               color="error" 
               onClick={()=>emptyCart()} >
                 Vaciar Carrito
             </Button>
-            <Link to="/">
-              <Button
-                sx={{marginLeft: 10}}
-                variant="contained" 
-                color="primary">
-                Seguir Comprando
-              </Button>
-            </Link>
-            {/* <Button
-              onClick={setOrder}>
-              Realizar Pedido
-            </Button> */}
           </div>}
+          {orderId && (<div>Última orden: {orderId}</div>)}
     </div>
     );
 };
