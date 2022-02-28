@@ -1,23 +1,17 @@
 import { Box } from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import  "./../../../assets/css/HomeStyles/Header.scss";
-import { makeStyles } from '@mui/styles';
 import CartWidget from '../../Cart/CartWidget';
 import OrderWidget from '../../Orders/OrderWidget';
+import { quickButtonsContainer } from '../../../assets/js/styleObjects';
 
-const useStyles = makeStyles({
-    quickButtonsContainer:{
-        display: "flex",
-        width: "100%",
-        justifyContent: "space-around"
-    }
-})
-function QuickActions({itemWishList=10, itemOrders=14}) {
-    const classes = useStyles();
+
+function QuickActions({itemWishList=10}) {
+
     return (
         <>
-            <Box component="div" className={classes.quickButtonsContainer}>
-                <Box component="div" className="quick__buttons">
+            <Box component="div" sx={ quickButtonsContainer }>
+                <div className="quick__buttons">
                     <div>
                         <FavoriteIcon 
                             color="error"
@@ -27,7 +21,7 @@ function QuickActions({itemWishList=10, itemOrders=14}) {
                         <span>WishList</span>
                         <span>{itemWishList}</span>
                     </div>
-                </Box>
+                </div>
                 <Box component="div" className="quick__buttons">
                     <OrderWidget/>
                 </Box>

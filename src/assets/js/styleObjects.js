@@ -76,3 +76,32 @@ export const styledFormModal = {
     p: 4,
     borderRadius: 5,
 }
+
+export const secondPartHeader = {
+    display: 'flex',
+    justifyContent : 'flex-end',
+    '@media (max-width: 1198px)':{
+        justifyContent : 'center',
+    }
+}
+
+export const accountButton = {
+    color: '#0943AEFF',
+    border: '1px solid #0943AEFF'
+}
+
+export const quickButtonsContainer = {
+    display: "flex",
+    width: "100%",
+    justifyContent: "space-around"
+}
+
+export const secondCompHeader = {
+    logoGrid: {
+        display:"flex",
+        justifyContent:"flex-start",
+    },
+    quickActions: {
+        justifyContent:"flex-end",
+    }
+}
