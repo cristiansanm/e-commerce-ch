@@ -21,10 +21,6 @@ function NavBar() {
                 name="Contacto" 
                 redirectTo={"/contact"}
                 style={mainLinkNavStyle}/>
-            <Options 
-                name="Descuentos de hoy" 
-                redirectTo={"/offers"}
-                style={mainLinkNavStyle}/>
         </div>
     )
 }

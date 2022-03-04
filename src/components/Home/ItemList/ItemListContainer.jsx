@@ -4,10 +4,18 @@ import { useParams } from 'react-router-dom';
 import HeaderViews from './../../UICommonComp/HeaderViews';
 import { formatCategory } from '../../../assets/js/formaters'
 import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore';
+import SnackBar from '../../UICommonComp/SnackBar';
+import { invokeData } from '../../../assets/js/mockupData';
 
 
 function ItemListContainer() {
+    //consts for snackbar
+    const [open, setOpen] = useState(false);
+    const handleClose = () => setOpen(false);
+    const [message,setMessage] = useState("");
+    const [type, setType] = useState("");
 
+    //const for ItemsList 
     const { categoryName } = useParams();
     const [dataLoaded, setDataLoaded] = useState([]);
 
@@ -25,33 +33,49 @@ function ItemListContainer() {
         
         //Function for getting all items in the collection
         const getAllDocs = async() =>{
-            let getAllItems = await getDocs(queryItemsCollection);
-
-            docsSetter(getAllItems);
+            try{
+                let getAllItems = await getDocs(queryItemsCollection);
+                docsSetter(getAllItems);
+            }
+            //If firebase throws an error, this component will load tre mockup data
+            catch(e){
+                setMessage(`Error con firebase: ${e.message}`);
+                setType("error");
+                setOpen(true)
+                setDataLoaded(await invokeData)
+                console.log(e)
+            }
         }
 
         //Funcition for getting items filtered by category
         const getDocsByCategory = async(category) => {
-            let queryByCategory = query(queryItemsCollection,
-                where('category', '==', category));
+            try {
+                let queryByCategory = query(queryItemsCollection,
+                    where('category', '==', category));
+                
+                let getItemsByCategory = await getDocs(queryByCategory);
+                
+                docsSetter(getItemsByCategory);
+            }
+            //If firebase throws an error, this component will load tre mockup data
+            catch(e){
+                setMessage(`Error con firebase: ${e.message}`);
+                setType("error");
+                setOpen(true);
+                console.log(e);
+                let data = await invokeData
+                setDataLoaded(data?.filter(item => item.category === categoryName))
+            }
             
-            let getItemsByCategory = await getDocs(queryByCategory);
-            
-            docsSetter(getItemsByCategory);
         }
 
         //Function for loading the request data from the database
         const load = async() => {
-            try {
-                if(categoryName){
-                    getDocsByCategory(categoryName);
-                }
-                else{
-                   getAllDocs();
-                }
+            if(categoryName){
+                getDocsByCategory(categoryName);
             }
-            catch (err){
-                console.log(err);
+            else{
+               getAllDocs();
             }
         }
         load();
@@ -61,6 +85,11 @@ function ItemListContainer() {
         <div>
             <HeaderViews viewTittle={(categoryName) ? `${formatCategory[categoryName]}` : 'Principales Ofertas'}/>
             <ItemList dataLoaded={dataLoaded}/>
+            <SnackBar
+                open={open} 
+                handleClose={handleClose} 
+                type={type} 
+                message={message}/>
         </div>
     )
 }

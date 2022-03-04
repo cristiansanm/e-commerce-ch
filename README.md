@@ -1,70 +1,99 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)
 
-## Available Scripts
+# Hear Yours - Ecommerce <img src="./public/Sonya-Swarm-Guitar.ico" alt="check" width="24" height="24">
 
-In the project directory, you can run:
+<div style="display: flex; justify-content: center; padding: 10px; background-color: #261F1E; border-radius: 10px">
+  <img src="./public/second_logo.png"/>
+</div>
 
-### `npm start`
+This is a beautiful web app developed by me, Cristian, which includes a navbar, product detail view, a cart and an orders view.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Authors
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [@cristiansanm](https://www.github.com/cristiansanm)
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Connected with Firebase
+- App created with React Js
+- Full frontend platform
 
-### `npm run build`
+## Demo
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![demo](./public/hear-yours.gif)
+</br>
+<https://hear-yours.netlify.app/>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. First download the project from my repository.
+2. Then, install all the dependecies from npm*.
 
-### `npm run eject`
+```bash
+  npm install 
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+*Remeber that this app was build on 16.13.1 version of npm, so remember to update your version if it's not updated to this one.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3.Run the app
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### `npm run start`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+4.That's it, you can make a build or anything you want.
 
-## Learn More
+## Related dependencies
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Here are the dependencies and libraries used in this app.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### React-Hook-Form
 
-### Code Splitting
+- Used  for validating the user form when you are making an order.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### React-Router-Dom
 
-### Analyzing the Bundle Size
+- Used for navigating between every view on the app. This dependence manages the routes and avoids reloading every click on any \<a> tag.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Firebase
 
-### Making a Progressive Web App
+- This is a Google service, which provides an database and sophisticated queries for CRUD manipulation.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Sass
 
-### Advanced Configuration
+- Used for pre-processing all the CSS. Helps to reduce repetions and therefore saves time.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Moment Js
 
-### Deployment
+- A library that formats the vanilla Javascrit dates to any type. Includes dates calculations and many other features.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Material UI
 
-### `npm run build` fails to minify
+- A big frontend library made with React. It brings functional components, completed styled objects and other functionalities prepared to make a friendly development
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Roadmap
+
+- Make a UX design
+<img src="https://icon-library.com/images/check-icon-small/check-icon-small-3.jpg" alt="check" width="24" height="24">
+
+- Implement firebase
+<img src="https://icon-library.com/images/check-icon-small/check-icon-small-3.jpg" alt="check" width="24" height="24">
+
+- Deploy on Netlify
+<img src="https://icon-library.com/images/check-icon-small/check-icon-small-3.jpg" alt="check" width="24" height="24">
+
+- Refactore code
+<img src="https://icon-library.com/images/check-icon-small/check-icon-small-3.jpg" alt="check" width="24" height="24">
+
+- Implement search bar
+
+- Add a log in and sign up
+
+- Add a admin version for restoring stock
+
+- Add a newsletter when new arrivals are released
+
+- Add a global money exchange (€ to $)
+
+- Add a single order view
+
+- Add a wishlist functionality

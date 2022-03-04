@@ -6,14 +6,21 @@ import CartTable from './CartTable';
 import "../../assets/css/Cart.scss";
 import { Link } from 'react-router-dom';
 import ClientForm from './ClientForm';
-
+import SnackBar from "../UICommonComp/SnackBar";
 
 const Cart = () => {
   const { cartList , emptyCart, calculateTotalPrice } = useCartContext();
   let totalAmount = calculateTotalPrice();
+  const [open, setOpen] = useState(false);
+  const [message, setMessage] = useState("");
+  const [type, setType] = useState("");
+  const handleClose = () => setOpen(false);
   const [orderId, setOrderId] = useState('');
   const handleOrderId = (id) => {
     setOrderId(id);
+    setMessage(`Se ha agregado una nueva orden, puedes ir a verla (ID: ${id})`)
+    setType("success");
+    setOpen(true);
   }
   return (
     <div>
@@ -44,7 +51,13 @@ const Cart = () => {
                 Vaciar Carrito
             </Button>
           </div>}
-          {orderId && (<div>Última orden: {orderId}</div>)}
+          {orderId && (
+            <SnackBar 
+              open = { open }
+              handleClose = { handleClose }
+              type = { type }
+              message = { message }/>
+          )}
     </div>
     );
 };
