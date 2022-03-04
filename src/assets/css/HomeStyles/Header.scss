@@ -75,3 +75,21 @@ hr{
         
     }
 }
+.phone__contact{
+    display: 'flex';
+    justify-content: 'flex-start';
+    padding-top: '18px';
+    height: '24px';
+    h4 {
+        margin: 0;
+    };
+    span {
+        margin-left: '5px';
+        margin-top: '2px';
+    };
+    @media (max-width: 1198px) {
+        justify-content : 'center';
+        margin-bottom: '10px';
+        padding-top: 0;
+    }  
+}
