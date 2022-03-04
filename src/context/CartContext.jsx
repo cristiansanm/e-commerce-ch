@@ -6,15 +6,15 @@ export const useCartContext = () => useContext(cartContext);
 const CartContextProvider = ({ children }) => {
   const [cartList, setCartList] = useState([]);
 
-  //Función para comprobar si está dentro del array
+  //Funtion for validate a existing element into the array
   const isInCart = (id) => (cartList?.find(element => element.item.id === id)) ? true : false;
 
-  //Añade al carrito nuevos items o más cantidad
+  //Function for add a item inside cart 
   function addToCart(item){
     if(isInCart(item.item.id)){
       let newCartList = [...cartList];
       
-      //Añade la cantidad adicional al producto
+      //Adds the aditional quantity to an existing item
       newCartList.map( element =>
 
           (element.item.id === item.item.id) ? element.quantity += item.quantity : element.quantity
@@ -29,39 +29,39 @@ const CartContextProvider = ({ children }) => {
     
   }
 
-  //Función para eliminar items de manera individual
+  //Function for deleting a single item
   function removeItem(id) {
     let newCartList = [...cartList];
 
-    //Se devuelve un nuevo array con el id filtrado
+    //Returns a filtered array
     let modifiedArray = newCartList.filter( element => element.item.id !== id);
 
     setCartList(modifiedArray);
   }
 
-  //Obtiene la cantidad total de elementos en el array
+  //Function for calculating the whole items into the cart
   function getTotalItemsOnCart(){
-    //Se inicializa en 0 para devolverlo cuando no hay nada en el array
+    //Starts at 0 when cart is empty
     let total = 0;
 
-    //Comprueba si el array está lleno y suma sus cantidades internas
+    //confirms if the array is fulled of items and starts to add
     if(cartList.length > 0){
       cartList.map(data => total += data.quantity)
     }
     return total
   }
 
-  //Vacía todo el carrito
+  //Empty the cart
   function emptyCart(){
     setCartList([])
   }
 
-  //calcula el precio a cobrar por cada articulo
+  //Calculates the total price of an single product and its quantity
   function calculateSubPrice(quantity, price){
     return quantity * price ;
   }
 
-  //Calcula el valor total de la compra
+  //Calculates the total amount of the order
   function calculateTotalPrice(){
     let total = 0;
     cartList?.map((row) => 
