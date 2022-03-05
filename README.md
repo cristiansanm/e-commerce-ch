@@ -3,15 +3,15 @@
 
 # Hear Yours - Ecommerce <img src="./public/Sonya-Swarm-Guitar.ico" alt="check" width="24" height="24">
 
-<div style="display: flex; justify-content: center; padding: 10px; background-color: #261F1E; border-radius: 10px">
-  <img src="./public/second_logo.png"/>
+<div style="display: flex; justify-content: center;">
+  <img src="./public/second_logo.png" style="background-color: #261F1E; border-radius: 10px; padding: 10px;"/>
 </div>
 
 This is a beautiful web app developed by me, Cristian, which includes a navbar, product detail view, a cart and an orders view.
 
 ## Authors
 
-- [@cristiansanm](https://www.github.com/cristiansanm)
+- Cristian Sánchez [@cristiansanm](https://www.github.com/cristiansanm)
 
 ## Features
 
@@ -27,8 +27,8 @@ This is a beautiful web app developed by me, Cristian, which includes a navbar, 
 
 ## Installation
 
-1. First download the project from my repository.
-2. Then, install all the dependecies from npm*.
+1.First download the project from my repository.
+2.Then, install all the dependecies from npm*.
 
 ```bash
   npm install 
@@ -72,17 +72,13 @@ Here are the dependencies and libraries used in this app.
 
 ## Roadmap
 
-- Make a UX design
-<img src="https://icon-library.com/images/check-icon-small/check-icon-small-3.jpg" alt="check" width="24" height="24">
+- Make a UX design ![check](./public/checked.png)
 
-- Implement firebase
-<img src="https://icon-library.com/images/check-icon-small/check-icon-small-3.jpg" alt="check" width="24" height="24">
+- Implement firebase ![check](./public/checked.png)
 
-- Deploy on Netlify
-<img src="https://icon-library.com/images/check-icon-small/check-icon-small-3.jpg" alt="check" width="24" height="24">
+- Deploy on Netlify ![check](./public/checked.png)
 
-- Refactore code
-<img src="https://icon-library.com/images/check-icon-small/check-icon-small-3.jpg" alt="check" width="24" height="24">
+- Refactore code ![check](./public/checked.png)
 
 - Implement search bar
 
