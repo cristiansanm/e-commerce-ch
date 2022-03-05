@@ -28,6 +28,7 @@ This is a beautiful web app developed by me, Cristian, which includes a navbar, 
 ## Installation
 
 1.First download the project from my repository.
+
 2.Then, install all the dependecies from npm*.
 
 ```bash
