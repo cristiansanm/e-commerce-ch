@@ -5,7 +5,7 @@ import Cart from './components/Cart/Cart';
 import { ItemDetailContainer } from './components/ItemDetail/ItemDetailContainer';
 import NavBar from './components/NavBar/NavBar';
 import HeaderContainer from './components/Header/HeaderContainer';
-import Contact from './components/Contact';
+import Contact from './components/Contact/Contact';
 import './App.css';
 import CartContextProvider from './context/CartContext';
 import { IconButton } from '@mui/material';
@@ -25,7 +25,7 @@ function App() {
   }
   const [ onScrollDown, setOnScrollDown ] = useState(false);
   window.onscroll = function(ev) {
-    if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         setOnScrollDown(true);
     }
     else{
