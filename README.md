@@ -4,7 +4,7 @@
 # Hear Yours - Ecommerce <img src="./public/Sonya-Swarm-Guitar.ico" alt="check" width="24" height="24">
 
 <div style="display: flex; justify-content: center;">
-  <img src="./public/second_logo.png" style="background-color: #261F1E; border-radius: 10px; padding: 10px;"/>
+  <img src="./public/second_logo_added.jpg" style="background-color: #261F1E; border-radius: 10px; padding: 10px;"/>
 </div>
 
 This is a beautiful web app developed by me, Cristian, which includes a navbar, product detail view, a cart and an orders view.
